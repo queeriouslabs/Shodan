@@ -1,0 +1,11 @@
+[Unit]
+Description=Shodan Say
+
+[Service]
+WorkingDirectory=/home/pi/Projects/shodan/
+User=pi
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/Projects/shodan/say.py
+
+[Install]
+WantedBy=multi-user.target
