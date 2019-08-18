@@ -1,1 +1,1 @@
-ln -s ./shodan_say /usr/bin
+ln -s "$(pwd)/shodan_say" /usr/bin
