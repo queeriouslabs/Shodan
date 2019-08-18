@@ -23,5 +23,5 @@ else:
   if 200 == r.status_code:
     with open(output, 'wb') as f:
       f.write(r.content)
-    call('aplay %s' % output, shell=True)
+    call('mpg123 %s' % output, shell=True)
     os.remove(output)
