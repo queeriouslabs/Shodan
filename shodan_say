@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python3 shodan_say.py $1

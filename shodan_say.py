@@ -21,6 +21,8 @@ else:
   r = requests.get(url)
 
   if 200 == r.status_code:
+    if not os.path.isdir('files'):
+      os.makedirs('files')
     with open(output, 'wb') as f:
       f.write(r.content)
     call('mpg123 %s' % output, shell=True)
