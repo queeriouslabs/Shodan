@@ -17,7 +17,7 @@ else:
   lang = 'en'
   text = urllib.parse.quote(sys.argv[1])
   url = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=%s&client=tw-ob&q=%s' % (lang, text)
-  output = ''.join(random.choice(string.hexdigits) for i in range(32)) + '.mp3'
+  output = 'files/' + ''.join(random.choice(string.hexdigits) for i in range(32)) + '.mp3'
   r = requests.get(url)
 
   if 200 == r.status_code:
