@@ -18,7 +18,9 @@ else:
     lang = 'en'
 
     lines = sys.argv[1].split('\\n')
-    print(lines)
+
+    say_sequence = []
+
     for line in lines:
         url = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=%s&client=tw-ob&q=%s' % (
             lang, line)
@@ -31,5 +33,8 @@ else:
                 os.makedirs('files')
             with open(output, 'wb') as f:
                 f.write(r.content)
-            call('mpg123 %s' % output, shell=True)
-            os.remove(output)
+            say_sequence += [output]
+
+    for file in say_sequence:
+        call('mpg123 %s' % file, shell=True)
+        os.remove(file)
